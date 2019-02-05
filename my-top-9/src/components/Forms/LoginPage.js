@@ -16,7 +16,7 @@ export default class LoginPage extends React.Component {
   render() {
     return (
       <div className='loginFormContainer'>
-        <h1>this is the login form</h1>
+        <h1>login</h1>
         <form className='loginForm'>
           <input 
             className='loginInput'

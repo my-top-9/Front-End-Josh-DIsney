@@ -5,6 +5,10 @@ export {
   USER_LOGIN_START,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAILURE,
+  USER_LOGOUT_START,
+  USER_LOGOUT_SUCCESS,
+  USER_LOGOUT_FAILURE,
   registerUser,
-  loginUser
+  loginUser,
+  logoutUser
 } from './loginActions';

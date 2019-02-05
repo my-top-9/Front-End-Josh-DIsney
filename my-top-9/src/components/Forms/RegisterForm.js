@@ -6,13 +6,13 @@ class RegisterForm extends React.Component {
   render() {
     return (
       <div className='registerFormContainer'>
-        <h1>This is the registration form</h1>
+        <h1>Create Account</h1>
         <form className='registerForm'>
           <input 
             className='registerInput'
             type='text'
             name='username'
-            placeholder='username...'
+            placeholder='enter new username...'
             value={this.props.user.username}
             onChange={this.props.handleChanges}
           />
@@ -20,7 +20,7 @@ class RegisterForm extends React.Component {
             className='registerInput'
             type='text'
             name='password'
-            placeholder='password...'
+            placeholder='enter new password...'
             value={this.props.user.password}
             onChange={this.props.handleChanges}
           />
