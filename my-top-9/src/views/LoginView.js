@@ -30,8 +30,8 @@ class LoginView extends React.Component {
     this.props.registerUser(this.state.user)
   }
 
-  loginNewUser = () => {
-    this.props.loginUser(this.state.user)
+  loginNewUser = (user) => {
+    this.props.loginUser(user)
   }
 
   render() {

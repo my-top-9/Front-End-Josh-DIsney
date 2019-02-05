@@ -22,11 +22,13 @@ export const registerUser = user => dispatch => {
 }
 
 export const loginUser = user => dispatch => {
+  console.log('USER', user)
   dispatch({ type: USER_LOGIN_START });
   axios
     .post('http://localhost:5000/api/login', user)
-    .then(response =>
-      dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data })
+    .then(response =>{
+      console.log('RESPONSE DATA',response.data)
+      dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data })}
       )
     .catch(error =>
       dispatch({ type: USER_LOGIN_FAILURE, payload: error})
