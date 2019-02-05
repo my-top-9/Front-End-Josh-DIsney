@@ -1,7 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
 
-class RegisterForm extends React.Component {
+export default class LoginPage extends React.Component {
   state = {
     username: '',
     password: ''
@@ -16,11 +15,11 @@ class RegisterForm extends React.Component {
 
   render() {
     return (
-      <div className='registerFormContainer'>
-        <h1>This is the registration form</h1>
-        <form className='registerForm'>
+      <div className='loginFormContainer'>
+        <h1>this is the login form</h1>
+        <form className='loginForm'>
           <input 
-            className='registerInput'
+            className='loginInput'
             type='text'
             name='username'
             placeholder='username...'
@@ -28,27 +27,21 @@ class RegisterForm extends React.Component {
             onChange={this.handleChanges}
           />
           <input 
-            className='registerInput'
+            className='loginInput'
             type='text'
             name='password'
             placeholder='password...'
             value={this.state.password}
             onChange={this.handleChanges}
           />
-          <button onClick={event => this.props.registerNewUser(event, this.state)}
-          className='registerButton'>
+          <button onClick={event => {
+            event.preventDefault()
+            this.props.loginNewUser(event, this.state)}} 
+            className='loginButton'>
             Submit
           </button>
         </form>
       </div>
-      
     )
   }
 }
-
-const mapStatetoProps = state => ({})
-
-export default connect(
-  mapStatetoProps,
-  {}
-)(RegisterForm);

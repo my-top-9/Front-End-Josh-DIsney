@@ -10,9 +10,11 @@ export const USER_LOGIN_FAILURE = 'USER_LOGIN_FAILURE';
 export const registerUser = user => dispatch => {
   dispatch({ type: REGISTER_USER_START });
   axios
-    .post('somethingorother', user)
-    .then(response =>
-      dispatch({ type: REGISTER_USER_SUCCESS, payload: response.data })
+    .post('http://localhost:5000/api/register', user)
+    .then(response => {
+      console.log('response',response)
+      return dispatch({ type: REGISTER_USER_SUCCESS, payload: response.data })
+      }
       )
     .catch(error =>
       dispatch({ type: REGISTER_USER_FAILURE, payload: error})
@@ -22,7 +24,7 @@ export const registerUser = user => dispatch => {
 export const loginUser = user => dispatch => {
   dispatch({ type: USER_LOGIN_START });
   axios
-    .post('somethingorother', user)
+    .post('http://localhost:5000/api/login', user)
     .then(response =>
       dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data })
       )

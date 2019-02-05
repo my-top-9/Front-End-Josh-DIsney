@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { registerUser, loginUser } from '../store/actions';
-import LoginPage from '../components/LoginPage';
-import RegisterForm from '../components/RegisterForm';
+import { registerUser, loginUser } from '../store/actions'
+import LoginPage from '../components/Forms/LoginPage';
+import RegisterForm from '../components/Forms/RegisterForm';
 
 class LoginView extends React.Component {
   state = {
@@ -44,6 +44,8 @@ class LoginView extends React.Component {
       <button onClick={this.toggleRegister}>Create Account</button>
       {this.state.isRegistering && (
         <RegisterForm
+          user={this.state.user}
+          handleChanges={this.handleChanges}
           registerNewUser={this.registerNewUser}
           isRegistering={this.state.isRegistering} />
       )}

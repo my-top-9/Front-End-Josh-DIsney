@@ -8,15 +8,15 @@ import {
 } from '../actions';
 
 const initalState = {
+  isFetching: false,
   isRegistering: false,
   isLoggedIn: false,
   isLoggingIn: false,
-  users: [],
   error: null
 }
 
 export const loginReducer = (state = initalState, action) => {
-  switch(action.type) {
+  switch(action.type) { 
     case REGISTER_USER_START:
       return {
         ...state,
@@ -27,7 +27,6 @@ export const loginReducer = (state = initalState, action) => {
       return {
         ...state,
         isRegistering: true,
-        users: action.payload,
         error: null
       }
     case REGISTER_USER_FAILURE:
@@ -47,7 +46,6 @@ export const loginReducer = (state = initalState, action) => {
         ...state,
         isLoggedIn: true,
         isLoggingIn: false,
-        users: action.payload,
         error: null
       }
     case USER_LOGIN_FAILURE:
