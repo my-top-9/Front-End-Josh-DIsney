@@ -11,11 +11,10 @@ import {
 } from '../actions';
 
 const initalState = {
-  isFetching: false,
   isRegistering: false,
-  isLoggedIn: false,
   isLoggingIn: false,
   isLoggingOut:false,
+  isLoggedIn: false,
   error: null
 }
 

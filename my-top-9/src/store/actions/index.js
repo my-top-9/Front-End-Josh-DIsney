@@ -12,3 +12,10 @@ export {
   loginUser,
   logoutUser
 } from './loginActions';
+
+export {
+  GET_CATEGORIES_START,
+  GET_CATEGORIES_SUCCESS,
+  GET_CATEGORIES_FAILURE,
+  getCategories
+} from './categoryActions'

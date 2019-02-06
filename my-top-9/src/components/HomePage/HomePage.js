@@ -1,7 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getCategories } from '../../store/actions';
+
 class HomePage extends React.Component{
+
+  componentDidMount() {
+    this.props.getCategories()
+  }
 
   render() {
     return (
@@ -15,9 +21,11 @@ class HomePage extends React.Component{
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  categories: state.categoryReducer.categories
+})
 
 export default connect(
   mapStateToProps,
-  {}
+  { getCategories }
 )(HomePage)
