@@ -7,33 +7,43 @@ import HomeView from './views/HomeView';
 import './App.css';
 
 class App extends React.Component {
+  state = {
+    isLoggedIn: false
+  }
+
+  componentDidMount() {
+    if (!localStorage.getItem('isLoggedIn')) {
+      this.setState({ isLoggedIn: false });
+    } else {
+      this.setState({ isLoggedIn: true });
+    }
+  }
 
   render() {
-    console.log('isLoggedIn', this.props.isLoggedIn)
+    console.log('props', this.props)
+    console.log('state', this.state)
     return (
       <div className="App">
-        <Route path='/Login' render={() => (
-          this.props.isLoggedIn ? (
+        <Route path='/login' render={() => (
+          this.state.isLoggedIn === true ? (
             <Redirect to='/' />
           ) : (
             <LoginView />
           )
         )} />
         <Route exact path='/' render={() => (
-          !this.props.isLoggedIn ? (
-            <Redirect to='/Login' />
+          this.state.isLoggedIn === false ? (
+            <Redirect to='/login' />
           ) : (
             <HomeView />
-          )
-        )} />
+          ))} 
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  isLoggedIn: state.loginReducer.isLoggedIn
-})
+const mapStateToProps = state => ({})
 
 export default withRouter(connect(
   mapStateToProps,
