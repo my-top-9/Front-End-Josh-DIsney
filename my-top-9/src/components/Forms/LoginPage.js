@@ -36,7 +36,6 @@ export default class LoginPage extends React.Component {
           />
           <button onClick={event => {
             event.preventDefault()
-            console.log(this.state)
             this.props.loginNewUser(this.state)}} 
             className='loginButton'>
             Submit

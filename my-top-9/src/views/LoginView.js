@@ -22,12 +22,6 @@ class LoginView extends React.Component {
     })
   }
 
-  // loginNewUser = () => {
-  //   const user = this.state.user.username;
-  //   localStorage.setItem('user', user);
-  //   window.location.reload();
-  // };
-
   toggleRegister = () => {
     this.setState({isRegistering: !this.state.isRegistering})
   }

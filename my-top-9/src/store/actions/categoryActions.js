@@ -7,8 +7,9 @@ export const GET_CATEGORIES_FAILURE = 'GET_CATEGORIES_FAILURE';
 export const getCategories = () => dispatch => {
   dispatch({ type: GET_CATEGORIES_START });
   axios
-  .get('http://localhost:5000/api/SomethingOrOther')
+  .get('https://my-top-9.herokuapp.com/api/categories')
   .then(response => {
+    console.log('RESPONSE DATA',response.data)
     dispatch({ type: GET_CATEGORIES_SUCCESS, payload: response.data })}
   )
   .catch(error => 

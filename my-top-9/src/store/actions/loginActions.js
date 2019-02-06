@@ -13,9 +13,8 @@ export const USER_LOGOUT_FAILURE = 'USER_LOGOUT_FAILURE';
 export const registerUser = user => dispatch => {
   dispatch({ type: REGISTER_USER_START });
   axios
-    .post('http://localhost:5000/api/register', user)
+    .post('https://my-top-9.herokuapp.com/api/register', user)
     .then(response => {
-      console.log('response',response)
       return dispatch({ type: REGISTER_USER_SUCCESS, payload: response.data })
       }
       )
@@ -25,15 +24,13 @@ export const registerUser = user => dispatch => {
 }
 
 export const loginUser = user => dispatch => {
-  console.log('USER', user)
   dispatch({ type: USER_LOGIN_START });
   axios
-    .post('http://localhost:5000/api/login', user)
+    .post('https://my-top-9.herokuapp.com/api/login', user)
     .then(response => {
-      console.log('RESPONSE DATA',response.data)
-      localStorage.setItem('user', response.data)
       localStorage.setItem('username', user.username);
       localStorage.setItem('isLoggedIn', true)
+      window.location.reload();
       dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data })}
       )
     .catch(error =>
@@ -44,8 +41,10 @@ export const loginUser = user => dispatch => {
 export const logoutUser = () => dispatch => {
   dispatch({ type: USER_LOGOUT_START });
   axios
-    .get('http://localhost:5000/api')
+    .get('https://my-top-9.herokuapp.com/api/logout')
     .then(response => {
+      localStorage.removeItem('isLoggedIn')
+      window.location.reload();
       dispatch({ type: USER_LOGOUT_SUCCESS, payload: response.data })}
     )
     .catch(error => 

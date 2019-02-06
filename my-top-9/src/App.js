@@ -12,48 +12,38 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // if (!localStorage.getItem('isLoggedIn')) {
-    //   console.log('no')
-    //   this.setState({ isLoggedIn: false });
-    // } else {
-    //   console.log('yes')
-    //   this.setState({ isLoggedIn: true });
-    // }
+    if (!localStorage.getItem('isLoggedIn')) {
+      this.setState({ isLoggedIn: false });
+    } else {
+      this.setState({ isLoggedIn: true });
+    }
   }
 
   render() {
-    console.log('props isLoggedIn', this.props.isLoggedIn)
-    console.log('state isLoggedIn', this.state.isLoggedIn)
-    console.log('local storage', localStorage.getItem('isLoggedIn'))
+    console.log('props', this.props)
+    console.log('state', this.state)
     return (
       <div className="App">
         <Route path='/login' render={() => (
-          localStorage.getItem('isloggedIn') === true ? (
+          this.state.isLoggedIn === true ? (
             <Redirect to='/' />
           ) : (
             <LoginView />
           )
         )} />
         <Route exact path='/' render={() => (
-          localStorage.getItem('isloggedIn') === false ? (
+          this.state.isLoggedIn === false ? (
             <Redirect to='/login' />
           ) : (
             <HomeView />
-          )
-        )} />
-          {localStorage.getItem('isloggedIn') === true ? (
-            this.props.history.push('/')
-          ) : (
-            this.props.history.push('/login')
-          )}
+          ))} 
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  isLoggedIn: state.loginReducer.isLoggedIn
-})
+const mapStateToProps = state => ({})
 
 export default withRouter(connect(
   mapStateToProps,

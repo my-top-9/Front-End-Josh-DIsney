@@ -16,6 +16,14 @@ class HomePage extends React.Component{
           <h1>This is the Home View</h1>
           <button onClick={this.props.logoutNewUser}>LOG OUT</button>
         </nav>
+        <div>
+          <div>
+            CategoriesView
+          </div>
+          <div>
+            My-Top-Nine
+          </div>
+        </div>
       </div>
     )
   }
