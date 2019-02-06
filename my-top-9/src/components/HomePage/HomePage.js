@@ -5,9 +5,9 @@ import { getCategories } from '../../store/actions';
 
 class HomePage extends React.Component{
 
-  componentDidMount() {
-    this.props.getCategories()
-  }
+  // componentDidMount() {
+  //   this.props.getCategories()
+  // }
 
   render() {
     return (
@@ -21,9 +21,7 @@ class HomePage extends React.Component{
   }
 }
 
-const mapStateToProps = state => ({
-  categories: state.categoryReducer.categories
-})
+const mapStateToProps = state => ({})
 
 export default connect(
   mapStateToProps,

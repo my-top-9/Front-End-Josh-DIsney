@@ -7,6 +7,7 @@ import HomePage from '../components/HomePage/HomePage';
 class HomeView extends React.Component {
 
   logoutNewUser = () => {
+    localStorage.removeItem('username');
     this.props.logoutUser()
   }
 

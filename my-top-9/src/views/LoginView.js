@@ -10,7 +10,7 @@ class LoginView extends React.Component {
     user: {
       username: '',
       password: ''
-    }
+    },
   }
 
   handleChanges = event => {
@@ -21,6 +21,12 @@ class LoginView extends React.Component {
       }
     })
   }
+
+  // loginNewUser = () => {
+  //   const user = this.state.user.username;
+  //   localStorage.setItem('user', user);
+  //   window.location.reload();
+  // };
 
   toggleRegister = () => {
     this.setState({isRegistering: !this.state.isRegistering})
@@ -56,7 +62,8 @@ class LoginView extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isRegistering: state.loginReducer.isRegistering
+  isRegistering: state.loginReducer.isRegistering,
+  isLoggedIn: state.loginReducer.isLoggedIn
 });
 
 export default connect(

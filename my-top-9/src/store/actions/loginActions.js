@@ -31,6 +31,8 @@ export const loginUser = user => dispatch => {
     .post('http://localhost:5000/api/login', user)
     .then(response => {
       console.log('RESPONSE DATA',response.data)
+      localStorage.setItem('user', response.data)
+      localStorage.setItem('username', user.username);
       localStorage.setItem('isLoggedIn', true)
       dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data })}
       )
@@ -42,7 +44,7 @@ export const loginUser = user => dispatch => {
 export const logoutUser = () => dispatch => {
   dispatch({ type: USER_LOGOUT_START });
   axios
-    .get('http://localhost:5000/api/logout')
+    .get('http://localhost:5000/api')
     .then(response => {
       dispatch({ type: USER_LOGOUT_SUCCESS, payload: response.data })}
     )
