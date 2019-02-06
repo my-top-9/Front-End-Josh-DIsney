@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getCategories } from '../../store/actions';
+import CategoriesView from '../../views/CategoriesView';
 
 class HomePage extends React.Component{
-
-  // componentDidMount() {
-  //   this.props.getCategories()
-  // }
 
   render() {
     return (
@@ -17,11 +13,9 @@ class HomePage extends React.Component{
           <button onClick={this.props.logoutNewUser}>LOG OUT</button>
         </nav>
         <div>
+          <CategoriesView />
           <div>
-            CategoriesView
-          </div>
-          <div>
-            My-Top-Nine
+            <h1>MyTop9View</h1>
           </div>
         </div>
       </div>
@@ -33,5 +27,5 @@ const mapStateToProps = state => ({})
 
 export default connect(
   mapStateToProps,
-  { getCategories }
+  {}
 )(HomePage)

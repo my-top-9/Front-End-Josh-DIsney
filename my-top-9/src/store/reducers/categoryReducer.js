@@ -10,7 +10,7 @@ const initialState = {
   error: null
 }
 
-export const cagegoryReducer = (state = initialState, action) => {
+export const categoryReducer = (state = initialState, action) => {
   switch(action.type) {
     case GET_CATEGORIES_START:
       return {
@@ -22,7 +22,7 @@ export const cagegoryReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetchingCategories: false,
-        caegories: action.payload,
+        categories: action.payload,
         error: null
       }
     case GET_CATEGORIES_FAILURE:
