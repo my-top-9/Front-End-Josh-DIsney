@@ -1,9 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter, NavLink } from 'react-router-dom';
 
-import LoginView from './views/LoginView';
 import HomeView from './views/HomeView';
+import LoginView from './views/LoginView';
+import CategoriesView from './views/CategoriesView';
+import TopNineView from './views/TopNineView';
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
+import { logoutUser, getUser } from './store/actions';
 import './App.css';
 
 class App extends React.Component {
@@ -17,35 +21,61 @@ class App extends React.Component {
     } else {
       this.setState({ isLoggedIn: true });
     }
+    const user = localStorage.getItem('user')
+    this.props.getUser(user)
+  }
+
+  logoutNewUser = () => {
+    localStorage.removeItem('username');
+    this.props.history.push('/login')
+    this.props.logoutUser()
   }
 
   render() {
-    console.log('props', this.props)
-    console.log('state', this.state)
+    console.log('app props', this.props)
+    console.log('app state', this.state)
     return (
       <div className="App">
-        <Route path='/login' render={() => (
+        {this.state.isLoggedIn && 
+          <nav>
+            <NavLink to='/'>Home</NavLink>
+            <button onClick={this.logoutNewUser}>LOG OUT</button>
+          </nav>
+        }
+        {/* <ProtectedRoute path='/login' component={LoginView}
+          isLoggedIn={!this.state.isLoggedIn}
+        /> */}
+        <Route path='/login' render={ () => (
           this.state.isLoggedIn === true ? (
             <Redirect to='/' />
           ) : (
             <LoginView />
           )
         )} />
-        <Route exact path='/' render={() => (
+        <ProtectedRoute exact='true' path='/' component={HomeView}
+          isLoggedIn={this.state.isLoggedIn} />
+        {/* <Route exact path='/' render={() => (
           this.state.isLoggedIn === false ? (
             <Redirect to='/login' />
           ) : (
             <HomeView />
           ))} 
-        />
+        /> */}
+        <ProtectedRoute path='/categories' component={CategoriesView}
+          isLoggedIn={this.state.isLoggedIn} />
+        <ProtectedRoute path='/my-top-9' component={TopNineView}
+          isLoggedIn={this.state.isLoggedIn} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => {
+  return ({
+  user: state.loginReducer.user
+})}
 
 export default withRouter(connect(
   mapStateToProps,
-  {}
+  { logoutUser, getUser }
 )(App))

@@ -7,19 +7,43 @@ import {
   USER_LOGIN_FAILURE,
   USER_LOGOUT_START,
   USER_LOGOUT_SUCCESS,
-  USER_LOGOUT_FAILURE
+  USER_LOGOUT_FAILURE,
+  GET_USER_START,
+  GET_USER_SUCCESS,
+  GET_USER_FAILURE,
 } from '../actions';
 
-const initalState = {
+const initialState = {
   isRegistering: false,
   isLoggingIn: false,
   isLoggingOut:false,
+  isGetting: false,
   isLoggedIn: false,
+  user: {},
   error: null
 }
 
-export const loginReducer = (state = initalState, action) => {
+export const loginReducer = (state = initialState, action) => {
   switch(action.type) { 
+    case GET_USER_START:
+      return {
+        ...state,
+        isGetting: true,
+        error: null
+      }
+    case GET_USER_SUCCESS:
+      return {
+        ...state,
+        isGetting: false,
+        user: action.payload,
+        error: null
+      }
+    case GET_USER_FAILURE:
+      return {
+        ...state,
+        isGetting: false,
+        error: action.payload
+      }
     case REGISTER_USER_START:
       return {
         ...state,

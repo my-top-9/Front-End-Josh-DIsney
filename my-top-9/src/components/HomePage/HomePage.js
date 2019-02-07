@@ -1,22 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import CategoriesView from '../../views/CategoriesView';
+import { NavLink } from 'react-router-dom';
 
 class HomePage extends React.Component{
 
   render() {
     return (
       <div>
-        <nav>
-          <h1>This is the Home View</h1>
-          <button onClick={this.props.logoutNewUser}>LOG OUT</button>
-        </nav>
+        <h1>This is the Home View</h1>
         <div>
-          <CategoriesView />
-          <div>
-            <h1>MyTop9View</h1>
-          </div>
+          <NavLink to='/categories'>Select Some Categories</NavLink>
+          <NavLink to='/my-top-9'>Your Top 9!</NavLink>
         </div>
       </div>
     )
