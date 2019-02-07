@@ -52,7 +52,7 @@ class CategoriesPage extends React.Component {
                 onChange={this.handleChanges}
                 className="ranks"
               >
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(rank => (
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((rank, index) => (
                   <option value={rank}>rank {rank}</option>
                 ))}
               </select>
@@ -61,7 +61,7 @@ class CategoriesPage extends React.Component {
                   this.props.addItemToTopNine(
                     event,
                     this.state.user,
-                    parseInt(this.state.rank, 10) + 1,
+                    this.state.rank === 0 ? parseInt(this.state.rank, 10) + 1 : parseInt(this.state.rank),
                     this.props.id
                   )
                 }
