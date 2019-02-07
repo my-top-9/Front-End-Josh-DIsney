@@ -1,20 +1,41 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
+import { getUser } from "../../store/actions";
+import "./TopNine.css";
 
 class TopNine extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <h1>Top Nine Goes Here</h1>
-      </div>
-    )
-  }
+    componentDidMount() {
+        this.props.getUser(localStorage.getItem("user"));
+    }
+    render() {
+        console.log("TOP9PROPS", this.props.user);
+        return (
+            <div className="top9-container">
+                <h1 className="top9-header">Your Top Nine Categories!!</h1>
+                <div className="rankmap">
+                    {this.props.user.map((user, index) => {
+                        if (index < 9) {
+                            return (
+                                <div className="category-card">
+                                    <img src={user.img || ''} alt={user.name} />
+                                    <h4 className="user-cat-title">{user.name.toUpperCase()}</h4>
+                                    <p className="user-cat-desc">{user.description}</p>
+                                    <p className="user-cat-rank"><strong>Rank {index + 1}</strong></p>
+                                </div>
+                            );
+                        }
+                    })}
+                </div>
+            </div>
+        );
+    }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    user: state.loginReducer.user
+});
 
 export default connect(
-  mapStateToProps,
-  {}
+    mapStateToProps,
+    { getUser }
 )(TopNine);
