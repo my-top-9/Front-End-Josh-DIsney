@@ -46,7 +46,7 @@ class CategoriesPage extends React.Component {
                 <option value={rank}>rank {rank}</option>
               ))}
             </select>
-            <button onClick={(event) => this.props.addItemToTopNine(event, this.state.user, (this.state.rank + 1), this.props.id)}>Add to My Top 9</button>
+            <button onClick={(event) => this.props.addItemToTopNine(event, this.state.user, (parseInt(this.state.rank, 10) + 1), this.props.id)}>Add to My Top 9</button>
             <button onClick={(event) => this.props.deleteCategory(event, this.props.id)}>Delete Category</button>
           </form>
         </div>}
