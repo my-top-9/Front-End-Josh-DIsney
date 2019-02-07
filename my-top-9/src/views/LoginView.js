@@ -39,20 +39,23 @@ class LoginView extends React.Component {
   render() {
     return (
       <div>
-      <LoginPage
-        handleChanges={this.handleChanges}
-        loginNewUser={this.loginNewUser}
-      />
-      <p className='createSlogan'>No Accout?  No Problem.  Create one here!</p>
-      <button className='createButton' onClick={this.toggleRegister}>Create Account</button>
-      {this.state.isRegistering && (
-        <RegisterForm
-          user={this.state.user}
+        <LoginPage
           handleChanges={this.handleChanges}
-          registerNewUser={this.registerNewUser}
-          isRegistering={this.state.isRegistering} />
-      )}
-      
+          loginNewUser={this.loginNewUser}
+        />
+        <p className='createSlogan'>No Accout?  No Problem.  Create one here!</p>
+        <a href='#scroll-section-two'><button className='createButton' onClick={this.toggleRegister}>{this.state.isRegistering ? 'cancel' : 'Create Account'}</button></a>
+        {this.state.isRegistering && (
+          <div>
+            <RegisterForm
+              user={this.state.user}
+              handleChanges={this.handleChanges}
+              registerNewUser={this.registerNewUser}
+              isRegistering={this.state.isRegistering} 
+            />
+            <a href='#scroll-section-one'><button className='backToLogin'>Return to login</button></a>
+          </div>
+        )}
       </div>
     )
   }

@@ -7,7 +7,7 @@ class RegisterForm extends React.Component {
 
   render() {
     return (
-      <div className='registerFormContainer'>
+      <div className='registerFormContainer' id='scroll-section-two'>
         <h1 className='registerHeading'>Create Account</h1>
         <form className='registerForm'>
           <input 
