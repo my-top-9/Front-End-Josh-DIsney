@@ -1,14 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import HomePage from '../components/HomePage/HomePage';
-
-class HomeView extends React.Component {
+class TopNine extends React.Component {
 
   render() {
     return (
       <div>
-        <HomePage />
+        <h1>Top Nine Goes Here</h1>
       </div>
     )
   }
@@ -19,4 +17,4 @@ const mapStateToProps = state => ({})
 export default connect(
   mapStateToProps,
   {}
-)(HomeView)
+)(TopNine);
