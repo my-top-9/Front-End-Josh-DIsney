@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import './CategoriesPage.css';
 
 class CategoriesPage extends React.Component {
   state = {
