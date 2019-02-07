@@ -8,14 +8,29 @@ export {
   USER_LOGOUT_START,
   USER_LOGOUT_SUCCESS,
   USER_LOGOUT_FAILURE,
+  GET_USER_START,
+  GET_USER_SUCCESS,
+  GET_USER_FAILURE,
   registerUser,
   loginUser,
-  logoutUser
+  logoutUser,
+  getUser
 } from './loginActions';
 
 export {
   GET_CATEGORIES_START,
   GET_CATEGORIES_SUCCESS,
   GET_CATEGORIES_FAILURE,
-  getCategories
+  DELETE_CATEGORIES_START,
+  DELETE_CATEGORIES_SUCCESS,
+  DELETE_CATEGORIES_FAILURE,
+  getCategories,
+  deleteCategory
 } from './categoryActions'
+
+export {
+  ADD_TOPNINE_START,
+  ADD_TOPNINE_SUCCESS,
+  ADD_TOPNINE_FAILURE,
+  addToTopNine
+} from './topNineActions'

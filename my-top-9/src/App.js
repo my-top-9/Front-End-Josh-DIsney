@@ -7,7 +7,7 @@ import LoginView from './views/LoginView';
 import CategoriesView from './views/CategoriesView';
 import TopNineView from './views/TopNineView';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
-import { logoutUser } from './store/actions';
+import { logoutUser, getUser } from './store/actions';
 import './App.css';
 
 class App extends React.Component {
@@ -21,6 +21,8 @@ class App extends React.Component {
     } else {
       this.setState({ isLoggedIn: true });
     }
+    const user = localStorage.getItem('user')
+    this.props.getUser(user)
   }
 
   logoutNewUser = () => {
@@ -30,8 +32,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('props', this.props)
-    console.log('state', this.state)
+    console.log('app props', this.props)
+    console.log('app state', this.state)
     return (
       <div className="App">
         {this.state.isLoggedIn && 
@@ -43,7 +45,7 @@ class App extends React.Component {
         {/* <ProtectedRoute path='/login' component={LoginView}
           isLoggedIn={!this.state.isLoggedIn}
         /> */}
-        <Route path='/login' render={() => (
+        <Route path='/login' render={ () => (
           this.state.isLoggedIn === true ? (
             <Redirect to='/' />
           ) : (
@@ -68,9 +70,12 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => {
+  return ({
+  user: state.loginReducer.user
+})}
 
 export default withRouter(connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, getUser }
 )(App))
