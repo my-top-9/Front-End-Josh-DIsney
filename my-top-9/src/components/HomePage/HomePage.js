@@ -6,9 +6,9 @@ class HomePage extends React.Component{
 
   render() {
     return (
-      <div>
-        <h1>This is the Home View</h1>
-        <div>
+      <div className='homeContainer'>
+        <h1 className='homeHeading'>This is the Home View</h1>
+        <div className='homeSections'>
           <NavLink to='/categories'>Select Some Categories</NavLink>
           <NavLink to='/my-top-9'>Your Top 9!</NavLink>
         </div>

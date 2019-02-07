@@ -9,7 +9,7 @@
 }
 
 .loginHeading {
-  color: palevioletred;
+  color: rgb(196, 55, 102);
   font-size: 6rem;
   margin-bottom: 100px;
 }
@@ -65,7 +65,7 @@
 }
 
 .registerHeading {
-  color: palevioletred;
+  color: rgb(196, 55, 102);
   font-size: 6rem;
   margin-bottom: 100px;
 }
