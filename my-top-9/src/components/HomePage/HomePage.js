@@ -2,16 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+import './HomePage.css';
+
 class HomePage extends React.Component{
 
   render() {
     return (
       <div className='homeContainer'>
-        <h1 className='homeHeading'>This is the Home View</h1>
-        <div className='homeSections'>
-          <NavLink to='/categories'>Select Some Categories</NavLink>
-          <NavLink to='/my-top-9'>Your Top 9!</NavLink>
-        </div>
+        <h1 className='homeHeading'>MY-TOP-9</h1>
+        <section className='homeSections'>
+          <div className='catLinkContainer'>
+            <NavLink to='/categories' className='homeLink'>Select Some Categories</NavLink>
+            <div className='previewImages'>
+              <img className='linkImage' src='http://www.jamespreller.com/wp-content/uploads/2009/07/yoda-300x300.jpg' alt='category option' />
+              <img className='linkImage' src='https://static-cdn.jtvnw.net/jtv_user_pictures/757608c422c1768f-profile_image-300x300.png' alt='category option' />
+            </div>
+          </div>
+          <div className='topNineLinkContainer'>
+            <NavLink to='/my-top-9' className='homeLink'>My Top 9</NavLink>
+            <img className='linkImage' src='https://files.slack.com/files-pri/T4JUEB3ME-FG19L1L4S/screen_shot_2019-02-07_at_4.05.25_pm.png' alt='top-nine-grid' />
+          </div>
+        </section>
       </div>
     )
   }
