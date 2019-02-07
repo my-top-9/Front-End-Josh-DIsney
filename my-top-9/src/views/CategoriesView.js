@@ -12,10 +12,13 @@ class CategoriesView extends React.Component {
 
   render() {
     return (
-      <div>
-        <CategoriesPage
-          categories={this.props.categories}
-        />
+      <div className='categoriesContainer'>
+        <h1 className='categoriesHeader'>Categories go here!</h1>
+        <div className='categoryList'>
+          {this.props.categories.map(category => (
+           <CategoriesPage {...category} />
+          ))}
+        </div>
       </div>
     )
   }
