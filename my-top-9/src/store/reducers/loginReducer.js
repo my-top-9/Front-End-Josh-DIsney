@@ -19,7 +19,7 @@ const initialState = {
   isLoggingOut:false,
   isGetting: false,
   isLoggedIn: false,
-  user: [],
+  user: null,
   error: null
 }
 

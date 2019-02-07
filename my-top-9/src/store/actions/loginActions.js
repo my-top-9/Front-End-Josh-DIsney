@@ -19,7 +19,7 @@ export const getUser = userId => dispatch => {
     .get(`https://my-top-9.herokuapp.com/api/users/${userId}`)
     .then(response => {
       console.log('getUserResponse', response.data)
-      dispatch({ type: GET_USER_SUCCESS, payload: response.data[10].id })
+      dispatch({ type: GET_USER_SUCCESS, payload: response.data })
     })
     .catch(error => {
       dispatch({ type: GET_USER_FAILURE, payload: error })
