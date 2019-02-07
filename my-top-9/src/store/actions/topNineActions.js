@@ -12,7 +12,7 @@ export const addToTopNine = (userId, rankInTop9, newCategoryId) => dispatch => {
       if (response.status !== 200) {
         console.warn(response)
       }
-      return dispatch({ type: ADD_TOPNINE_SUCCESS })
+      return dispatch({ type: ADD_TOPNINE_SUCCESS, payload: response.data })
     })
     .catch(error => {
       return dispatch({ type: ADD_TOPNINE_FAILURE, payload: error})

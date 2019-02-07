@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   isUpdatingUser: false,
+  topNineCards: [],
   error: null
 }
 
@@ -21,6 +22,7 @@ export const topNineReducer = (state = initialState, action) => {
       return {
         ...state,
         isUpdatingUser: false,
+        topNineCards: action.payload,
         error: null
       }
     case ADD_TOPNINE_FAILURE:

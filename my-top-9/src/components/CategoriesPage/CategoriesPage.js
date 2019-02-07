@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 class CategoriesPage extends React.Component {
   state = {
     showOptions: false,
-    rank: 0
+    rank: 0,
+    user: null
   }
 
   toggleOptions = () => {
@@ -14,6 +15,13 @@ class CategoriesPage extends React.Component {
   handleChanges = (event) => {
     this.setState({
       [event.target.name]: event.target.value
+    })
+  }
+  
+  componentDidMount() {
+    const user = localStorage.getItem('user')
+    this.setState({
+      user: user
     })
   }
 
@@ -37,7 +45,7 @@ class CategoriesPage extends React.Component {
                 <option value={rank}>rank {rank}</option>
               ))}
             </select>
-            <button onClick={(event) => this.props.addItemToTopNine(event, this.props.user.id, this.state.rank, this.props.id)}>Add to My Top 9</button>
+            <button onClick={(event) => this.props.addItemToTopNine(event, this.state.user, this.state.rank, this.props.id)}>Add to My Top 9</button>
             <button onClick={(event) => this.props.deleteCategory(event, this.props.id)}>Delete Category</button>
           </form>
         </div>}
