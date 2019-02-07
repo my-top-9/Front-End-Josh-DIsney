@@ -42,9 +42,6 @@ class App extends React.Component {
             <button onClick={this.logoutNewUser}>LOG OUT</button>
           </nav>
         }
-        {/* <ProtectedRoute path='/login' component={LoginView}
-          isLoggedIn={!this.state.isLoggedIn}
-        /> */}
         <Route path='/login' render={ () => (
           this.state.isLoggedIn === true ? (
             <Redirect to='/' />
@@ -54,13 +51,6 @@ class App extends React.Component {
         )} />
         <ProtectedRoute exact='true' path='/' component={HomeView}
           isLoggedIn={this.state.isLoggedIn} />
-        {/* <Route exact path='/' render={() => (
-          this.state.isLoggedIn === false ? (
-            <Redirect to='/login' />
-          ) : (
-            <HomeView />
-          ))} 
-        /> */}
         <ProtectedRoute path='/categories' component={CategoriesView}
           isLoggedIn={this.state.isLoggedIn} />
         <ProtectedRoute path='/my-top-9' component={TopNineView}

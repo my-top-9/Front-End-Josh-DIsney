@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './Forms.css';
+
 class RegisterForm extends React.Component {
 
   render() {
     return (
       <div className='registerFormContainer'>
-        <h1>Create Account</h1>
+        <h1 className='registerHeading'>Create Account</h1>
         <form className='registerForm'>
           <input 
             className='registerInput'
@@ -28,7 +30,7 @@ class RegisterForm extends React.Component {
             event.preventDefault();
             this.props.registerNewUser(event, this.state)}}
             className='registerButton'>
-            Submit
+            Create
           </button>
         </form>
       </div>

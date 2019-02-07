@@ -5,6 +5,8 @@ import { registerUser, loginUser } from '../store/actions'
 import LoginPage from '../components/Forms/LoginPage';
 import RegisterForm from '../components/Forms/RegisterForm';
 
+import '../components/Forms/Forms.css';
+
 class LoginView extends React.Component {
   state = {
     user: {
@@ -41,7 +43,8 @@ class LoginView extends React.Component {
         handleChanges={this.handleChanges}
         loginNewUser={this.loginNewUser}
       />
-      <button onClick={this.toggleRegister}>Create Account</button>
+      <p className='createSlogan'>No Accout?  No Problem.  Create one here!</p>
+      <button className='createButton' onClick={this.toggleRegister}>Create Account</button>
       {this.state.isRegistering && (
         <RegisterForm
           user={this.state.user}

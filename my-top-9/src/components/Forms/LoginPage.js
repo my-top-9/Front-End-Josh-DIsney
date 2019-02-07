@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import './Forms.css';
 
 export default class LoginPage extends React.Component {
   state = {
@@ -16,7 +18,7 @@ export default class LoginPage extends React.Component {
   render() {
     return (
       <div className='loginFormContainer'>
-        <h1>login</h1>
+        <h1 className='loginHeading'>MyTopNine</h1>
         <form className='loginForm'>
           <input 
             className='loginInput'
@@ -38,7 +40,7 @@ export default class LoginPage extends React.Component {
             event.preventDefault()
             this.props.loginNewUser(this.state)}} 
             className='loginButton'>
-            Submit
+            Login
           </button>
         </form>
       </div>
