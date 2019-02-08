@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import top9 from './top9.png';
 
 import './HomePage.css';
 
@@ -20,7 +21,7 @@ class HomePage extends React.Component{
           </div>
           <div className='topNineLinkContainer'>
             <NavLink to='/my-top-9' className='homeLink'>My Top 9</NavLink>
-            <img className='linkImage' src='https://files.slack.com/files-pri/T4JUEB3ME-FG19L1L4S/screen_shot_2019-02-07_at_4.05.25_pm.png' alt='top-nine-grid' />
+            <img className='linkImage' src={top9} alt='top-nine-grid' />
           </div>
         </section>
       </div>
