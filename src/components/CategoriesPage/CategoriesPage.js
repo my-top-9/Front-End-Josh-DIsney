@@ -73,7 +73,7 @@ class CategoriesPage extends React.Component {
                             >
                                 Add to My Top 9
                             </button>
-                            <button
+                            {/* <button
                                 onClick={event =>
                                     this.props.deleteCategory(
                                         event,
@@ -82,7 +82,7 @@ class CategoriesPage extends React.Component {
                                 }
                             >
                                 Delete Category
-                            </button>
+                            </button> */}
                         </form>
                     )}
                 </div>
