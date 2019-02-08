@@ -5,7 +5,6 @@ import logger from "redux-logger";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
 import rootReducer from "./store/reducers";
