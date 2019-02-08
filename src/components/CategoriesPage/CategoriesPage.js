@@ -30,7 +30,6 @@ class CategoriesPage extends React.Component {
         return (
             <React.Fragment>
                 <div
-                    onClick={this.toggleOptions}
                     className="categoryItem"
                     key={this.props.id}
                 >
@@ -38,13 +37,13 @@ class CategoriesPage extends React.Component {
                         className="categoryImage"
                         src={`${this.props.img}`}
                         alt="Category"
+                        onClick={this.toggleOptions}
                     />
                     <h4 className="categoryName">{this.props.name}</h4>
                     <p className="categoryDescripton">
                         {this.props.description}
                     </p>
                     {this.state.showOptions && (
-                    <div>
                         <form className="edit-rank-form">
                             <select
                                 name="rank"
@@ -74,7 +73,7 @@ class CategoriesPage extends React.Component {
                             >
                                 Add to My Top 9
                             </button>
-                            <button
+                            {/* <button
                                 onClick={event =>
                                     this.props.deleteCategory(
                                         event,
@@ -83,10 +82,9 @@ class CategoriesPage extends React.Component {
                                 }
                             >
                                 Delete Category
-                            </button>
+                            </button> */}
                         </form>
-                    </div>
-                )}
+                    )}
                 </div>
             </React.Fragment>
         );

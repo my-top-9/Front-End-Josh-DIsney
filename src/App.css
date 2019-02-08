@@ -34,3 +34,12 @@
   border: solid 2px rgb(158, 31, 73);
   border-radius: 10px;
 }
+
+#root > div > div > div.addCategoryContainer > form > div:nth-child(2) > div > input {
+  font-size: 1.6rem;
+  margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    height: 30px;
+}
