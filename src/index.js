@@ -23,3 +23,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+// I'm really proud of all the hard work everyone on our team did.  This was an excellent learning experience for me.
+// I'm so grateful to be a part of Lambda and to have this opportunity.
