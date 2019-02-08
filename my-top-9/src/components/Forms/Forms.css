@@ -1,4 +1,4 @@
-.loginFormContainer {
+.loginFormContainer, .registerFormContainer {
   max-width: 600px;
   margin: 80px auto 40px;
   display: flex;
@@ -8,20 +8,20 @@
   border-radius: 30px;
 }
 
-.loginHeading {
+.loginHeading, .registerHeading {
   color: rgb(196, 55, 102);
   font-size: 6rem;
   margin-bottom: 100px;
 }
 
-.loginForm{
+.loginForm, .registerForm {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 30px;
 }
 
-.loginInput {
+.loginInput, .registerInput {
   width: 400px;
   height: 40px;
   padding-left: 15px;
@@ -30,7 +30,7 @@
   border-radius: 5%;
 }
 
-.loginButton {
+.loginButton, .createButton, .registerButton, .backToLogin {
   margin: 10px 0;
   width: 250px;
   height: 40px;
@@ -38,6 +38,12 @@
   font-weight: 600;
   letter-spacing: 3px;
   border-radius: 5%;
+}
+
+.loginButton:hover, .createButton:hover, .registerButton:hover, .backToLogin:hover {
+  cursor: pointer;
+  color: rgb(53, 4, 4);
+  background-color: ghostwhite;
 }
 
 .createSlogan {
@@ -45,63 +51,6 @@
 }
 
 .createButton {
-  margin: 10px 0;
-  width: 250px;
-  height: 40px;
-  font-size: 2rem;
   font-weight: 550;
   letter-spacing: 2px;
-  border-radius: 5%;
-}
-
-.registerFormContainer {
-  max-width: 600px;
-  margin: 80px auto 40px;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  border: solid 1px black;
-  border-radius: 30px;
-}
-
-.registerHeading {
-  color: rgb(196, 55, 102);
-  font-size: 6rem;
-  margin-bottom: 100px;
-}
-
-.registerForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 30px;
-}
-
-.registerInput {
-  width: 400px;
-  height: 40px;
-  padding-left: 15px;
-  margin: 10px 0;
-  font-size: 2rem;
-  border-radius: 5%;
-}
-
-.registerButton {
-  margin: 10px 0;
-  width: 250px;
-  height: 40px;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  border-radius: 5%;
-}
-
-.backToLogin {
-  margin: 10px 0;
-  width: 250px;
-  height: 40px;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  border-radius: 5%;
 }

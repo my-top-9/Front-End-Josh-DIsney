@@ -38,7 +38,13 @@ class App extends React.Component {
       <div className="App">
         {this.state.isLoggedIn && 
           <nav className='mainNav'>
-            <NavLink className='homeButton' to='/'>HOME</NavLink>
+            {this.props.location.pathname.includes('categories') &&
+              <NavLink className='navButton' to='/my-top-9'>MY TOP 9</NavLink>
+            }
+            {this.props.location.pathname.includes('my-top-9') &&
+              <NavLink className='navButton' to='/categories'>CATEGORIES</NavLink>
+            }
+            <NavLink className='navButton' to='/'>HOME</NavLink>
             <div className='logoutButton' onClick={this.logoutNewUser}>LOG OUT</div>
           </nav>
         }
