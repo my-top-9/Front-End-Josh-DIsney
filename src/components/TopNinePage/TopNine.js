@@ -16,7 +16,7 @@ class TopNine extends React.Component {
                     {this.props.user.map((user, index) => {
                         if (index < 9) {
                             return (
-                                <div className="category-card">
+                                <div key={Date.now() * index * Math.random() * Date.now()} className="category-card">
                                     <img src={user.img || ''} alt={user.name} />
                                     <h4 className="user-cat-title">{user.name.toUpperCase()}</h4>
                                     <p className="user-cat-desc">{user.description}</p>

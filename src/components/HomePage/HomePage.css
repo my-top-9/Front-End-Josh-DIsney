@@ -1,5 +1,4 @@
 .homeContainer {
-  height: 100vh;
   margin: 0 auto;
   padding: 60px 100px;
   background-color: rgb(44, 6, 80)
@@ -82,4 +81,45 @@
   padding-top: 20px;
   display: flex;
   justify-content: space-evenly;
+}
+
+.user-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-card {
+  border: 1px solid #fff;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-card-title {
+  color: #fff;
+}
+
+.img-cat-matches {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  align-items: center;
+}
+
+.rank-img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rank-number {
+  color: #fff;
+  padding: 5px;
 }
