@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import CategoriesPage from "../components/CategoriesPage/CategoriesPage";
 import { getCategories, addToTopNine, deleteCategory } from "../store/actions";
 import AddCategory from "../components/Forms/AddCategory";
+import './CategoriesView.css';
+
 class CategoriesView extends React.Component {
   componentDidMount() {
     this.props.getCategories();
@@ -26,8 +28,8 @@ class CategoriesView extends React.Component {
     return (
       <div className="categoriesContainer">
         <h1 className="categoriesHeader">Categories go here!</h1>
+        <AddCategory />
         <div className="categoryList">
-          <AddCategory />
           {this.props.categories.map(category => (
             <CategoriesPage
               {...category}

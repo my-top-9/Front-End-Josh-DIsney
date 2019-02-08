@@ -2,3 +2,82 @@
     width: 300px;
     max-width: 300px;
 }
+
+.categoryList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 500px) {
+    .categoryList {
+        display: block;
+        width: 100%;
+    }
+}
+
+.categoryItem {
+    width: 300px;
+    max-width: 300px;
+    border: 1px solid black;
+    margin: 5px;
+    width: 32%;
+    height: 400px;
+    max-height: 400px;
+}
+
+@media(max-width: 500px) {
+    .categoryItem {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px auto;
+        padding: 0;
+        height: 600px;
+        max-height: 600px;
+    }
+}
+
+.categoryItem img {
+    width: 100%;
+}
+
+@media(max-width: 500px) {
+    .categoryItem img {
+        width: 100%;
+        max-width: 100%;
+    } 
+}
+
+.categoryName {
+    font-weight: bold;
+    padding: 20px 0 0 0;
+}
+
+.addCategory {
+    width: 100%;
+}
+
+.new-cat-sub-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+}
+
+.new-cat-sub-btn p {
+    font-size: 36px;
+}
+
+@media(max-width: 500px) {
+    .new-cat-sub-btn {
+        height: 100px;
+        margin: 0 20px 5px -7.5px;
+    }
+}
+
+.edit-rank-form {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 5px;
+}

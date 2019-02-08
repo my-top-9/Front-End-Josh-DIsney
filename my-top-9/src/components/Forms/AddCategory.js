@@ -77,9 +77,9 @@ class AddCategory extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup check row>
-            <Col sm={{ size: 10, offset: 2 }}>
-              <Button onClick={this.addCategory} type="submit">
-                Submit
+            <Col>
+              <Button className="new-cat-sub-btn" onClick={this.addCategory} type="submit">
+                <p>Submit</p>
               </Button>
             </Col>
           </FormGroup>
