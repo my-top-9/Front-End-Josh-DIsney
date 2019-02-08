@@ -37,9 +37,9 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.state.isLoggedIn && 
-          <nav>
-            <NavLink to='/'>Home</NavLink>
-            <button onClick={this.logoutNewUser}>LOG OUT</button>
+          <nav className='mainNav'>
+            <NavLink className='homeButton' to='/'>HOME</NavLink>
+            <div className='logoutButton' onClick={this.logoutNewUser}>LOG OUT</div>
           </nav>
         }
         <Route path='/login' render={ () => (
