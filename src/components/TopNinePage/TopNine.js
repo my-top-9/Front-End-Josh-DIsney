@@ -13,14 +13,29 @@ class TopNine extends React.Component {
             <div className="top9-container">
                 <h1 className="top9-header">Your Top Nine Categories!!</h1>
                 <div className="rankmap">
+                    {this.props.user ? null : (this.props.user = [])}
                     {this.props.user.map((user, index) => {
                         if (index < 9) {
                             return (
-                                <div key={Date.now() * index * Math.random() * Date.now()} className="category-card">
-                                    <img src={user.img || ''} alt={user.name} />
-                                    <h4 className="user-cat-title">{user.name.toUpperCase()}</h4>
-                                    <p className="user-cat-desc">{user.description}</p>
-                                    <p className="user-cat-rank"><strong>Rank {index + 1}</strong></p>
+                                <div
+                                    key={Math.random() * Date.now() * index}
+                                    className="category-card"
+                                >
+                                    <img
+                                        src={user.img || "NULL"}
+                                        alt={user.name || "NULL"}
+                                    />
+                                    <h4 className="user-cat-title">
+                                        {user.name.toUpperCase() || "NULL"}
+                                    </h4>
+                                    <p className="user-cat-desc">
+                                        {user.description || "NULL"}
+                                    </p>
+                                    <p className="user-cat-rank">
+                                        <strong>
+                                            Rank {index + 1 || "NULL"}
+                                        </strong>
+                                    </p>
                                 </div>
                             );
                         }

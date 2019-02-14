@@ -25,6 +25,7 @@
     width: 32%;
     height: 400px;
     max-height: 400px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 @media(max-width: 500px) {
@@ -35,6 +36,7 @@
         padding: 0;
         height: 600px;
         max-height: 600px;
+        box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     }
 }
 
@@ -56,6 +58,7 @@
 
 .addCategory {
     width: 100%;
+    padding: 20px;
 }
 
 .new-cat-sub-btn {
@@ -70,6 +73,12 @@
 
 @media(max-width: 500px) {
     .new-cat-sub-btn {
+        padding: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .new-cat-sub-btn {
         height: 100px;
         margin: 0 20px 5px -7.5px;
     }
@@ -77,4 +86,9 @@
 
 .edit-rank-form {
     display: flex;
+}
+
+#root > div > div > div.addCategoryContainer > form > div:nth-child(2) > div > input {
+    font-size: 1.6rem;
+    padding: 3rem;
 }
